@@ -12,15 +12,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de Produtos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
+<body class="container">
     <h1>Listagem de Produtos</h1>
-    <table border="1">
-        <tr>
+        <a class="btn btn-primary m-2" href="ServletProdutoFC?acao=formIncluir">Novo Produto</a>
+    <table class="table table-striped">
+        <tr class="table-dark">
             <th>ID</th>
             <th>Nome</th>
             <th>Quantidade</th>
-            <th>Preço</th>
+            <th>Preço de Venda</th>
             <th>Opções</th>
         </tr>
         <% 
@@ -34,8 +36,8 @@
             <td><%= produto.getQuantidade() %></td>
             <td><%= produto.getPrecoVenda() %></td>
             <td>
-                <a  href="ServletProdutoFC?acao=formAlterar&id=<%=produto.getIdProduto()%>">Alterar</a>
-                <a  href="ServletProdutoFC?acao=excluir&id=<%=produto.getIdProduto()%>">Excluir</a>
+                <a class="btn btn-primary btn-sm"  href="ServletProdutoFC?acao=formAlterar&id=<%=produto.getIdProduto()%>">Alterar</a>
+                <a class="btn btn-danger btn-sm"  href="ServletProdutoFC?acao=excluir&id=<%=produto.getIdProduto()%>">Excluir</a>
             </td>
         </tr>
         <% 
@@ -43,7 +45,6 @@
             }
         %>
     </table>
-    <br>
-    <a href="ServletProdutoFC?acao=formIncluir">Novo Produto</a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
